@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SENAC Skateboard Store</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <header class="head">
+      <nav>
+        <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+        <ul class="menu">
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#products">Produtos</a></li>
+          <li><a href="#benefits">Benefícios</a></li>
+          <li><a href="#shop">Loja</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="contents">
+      <section id="about" class="section">
+        <h2>Sobre</h2>
+        <p>
+          Somos apaixonados por skateboarding! Oferecemos as melhores peças e
+          equipamentos para ajudar você a alcançar seus objetivos no skate.
+        </p>
+        <img src="./svg/undraw_fatherhood_-7-i19.svg" alt="Descrição do SVG" />
+      </section>
+
+      <section id="products" class="section">
+        <h2>Produtos</h2>
+        <p>
+          Confira nossa variedade de shapes, rodas, rolamentos e muito mais.
+          Tudo para personalizar seu skate!
+        </p>
+        <img src="./svg/undraw_skateboard_re_we2n.svg" alt="Descrição do SVG" />
+      </section>
+
+      <section id="benefits" class="section">
+        <h2>Benefícios</h2>
+        <p>
+          Preços acessíveis, suporte especializado e entrega rápida. Nossa
+          missão é garantir sua satisfação.
+        </p>
+        <img
+          src="./svg/undraw_skateboarding_-929-d.svg"
+          alt="Descrição do SVG"
+        />
+      </section>
+
+      <section id="shop" class="section">
+        <h2>Loja</h2>
+        <p>
+          Visite nossa loja física ou explore nossos produtos online para
+          encontrar tudo o que você precisa.
+        </p>
+        <img
+          src="./svg/undraw_web_shopping_re_owap.svg"
+          alt="Descrição do SVG"
+        />
+
+        <a href="#">Em construção...</a>
+      </section>
+
+      <section id="blog" class="section">
+        <h2>Blog</h2>
+        <p>
+          Leia dicas, histórias de skatistas e as últimas novidades do mundo do
+          skateboarding.
+        </p>
+        <a href="#">Em construção...</a>
+      </section>
+    </main>
+
+    <section id="contact" class="section">
+      <h2>Formulário de Contato</h2>
+      <form>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Nome Completo"
+        />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="Email"
+        />
+        <textarea
+          id="message"
+          name="message"
+          required
+          placeholder="Mensagem"
+        ></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <button id="scrollToTop" title="Voltar ao topo">⬆</button>
+    <footer>
+      <p>
+        2024 SENAC Skateboard Store. Todos os direitos livres para quem quiser
+        usar esta página como template.
+      </p>
+      <p>desenvolvido por <b>Elcio Augusto Dalosto</b></p>
+    </footer>
+
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".menu");
+      const menuLinks = document.querySelectorAll(".menu a"); // Seleciona os links do menu
+
+      // Alterna o menu ao clicar no botão
+      menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("open");
+      });
+
+      // Fecha o menu ao clicar em um link
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.remove("open");
+        });
+      });
+
+      const scrollToTopButton = document.getElementById("scrollToTop");
+
+      // Mostrar ou esconder o botão dependendo da posição do scroll
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 30) {
+          // Mostra o botão quando rolar mais de 200px
+          scrollToTopButton.style.display = "block";
+        } else {
+          scrollToTopButton.style.display = "none";
+        }
+      });
+
+      // Função para rolar suavemente até o topo
+      scrollToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
